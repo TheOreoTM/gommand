@@ -1,7 +1,6 @@
 package gommand
 
 import (
-	"fmt"
 	"reflect"
 	"testing"
 )
@@ -44,7 +43,7 @@ func TestDefault(t *testing.T) {
 		Function: func(ctx *Context) error {
 			if !reflect.DeepEqual(ctx.Args, tables[test].expected) {
 				// reflect.DeepEqual is slow but should be fine for test cases
-				t.Log(fmt.Sprintf("test %d failed", test))
+				t.Logf("test %d failed", test)
 				t.FailNow()
 			}
 			return nil

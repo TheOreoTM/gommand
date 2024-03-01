@@ -102,7 +102,10 @@ func (e *EmbedMenu) Display(ChannelID, MessageID disgord.Snowflake, client disgo
 	EmbedCopy.Fields = append(EmbedCopy.Fields, Fields...)
 
 	msgRef := client.Channel(ChannelID).Message(MessageID)
-	_, err := msgRef.Update().SetContent("").SetEmbed(EmbedCopy).Execute()
+	// _, err := msgRef.Update().SetContent("").SetEmbed(EmbedCopy).Execute()
+	_, err := msgRef.Update(&disgord.UpdateMessage{
+		Embeds: &[]*disgord.Embed{EmbedCopy},
+	})
 	if err != nil {
 		return err
 	}

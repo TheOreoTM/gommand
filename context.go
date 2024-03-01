@@ -114,7 +114,7 @@ func (c *Context) PermissionVerifiedReply(data ...interface{}) (*disgord.Message
 		switch v.(type) {
 		case disgord.Embed, *disgord.Embed:
 			required |= disgord.PermissionEmbedLinks
-		case disgord.CreateMessageFileParams, *disgord.CreateMessageFileParams:
+		case disgord.CreateMessageFile, *disgord.CreateMessageFile:
 			required |= disgord.PermissionAttachFiles
 		case disgord.Message, *disgord.Message:
 			embedlen := 0
