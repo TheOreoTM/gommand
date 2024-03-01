@@ -3,8 +3,9 @@ package gommand
 
 import (
 	"context"
-	"github.com/andersfylling/disgord"
 	"strings"
+
+	"github.com/andersfylling/disgord"
 )
 
 // Context defines the information which might be required to run the command.
